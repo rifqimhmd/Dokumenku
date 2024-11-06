@@ -47,7 +47,7 @@ function App() {
     const doc = new jsPDF("p", "pt", "a4");
     doc.html(input, {
       callback: function (doc) {
-        doc.save("suratlamaran-dokumenku.pdf");
+        doc.save("Surat Lamaran by DokumenKerjaku.pdf");
       },
       margin: [65, 75, 65, 75],
     });
@@ -277,20 +277,24 @@ function App() {
           </div>
           <form
             onSubmit={addFile}
-            className={`mx-3 mt-4 flex gap-2 items-center ${
+            className={`mx-3 mt-4 ${
               value.file.length === 0 ? "mb-3" : "mb-1"
             } ${value.attachment && "hidden"}`}
           >
-            <input
-              type="text"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
-            />
-            <FaPlusSquare
-              className="text-orange-500 cursor-pointer size-[46px] hover:text-orange-600"
-              onClick={addFile}
-            />
+            <p>Lampiran Berkas</p>
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                placeholder="Ex: CV"
+                className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+              />
+              <FaPlusSquare
+                className="text-orange-500 cursor-pointer size-[46px] hover:text-orange-600"
+                onClick={addFile}
+              />
+            </div>
           </form>
           <ul
             className={`mx-3 p-2 border border-orange-600 rounded-md mb-5 ${
@@ -452,7 +456,12 @@ function App() {
               </div>
             </div>
           </div>
-          <button onClick={downloadPDF}>Download</button>
+          <button
+            className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+            onClick={downloadPDF}
+          >
+            Download
+          </button>
         </div>
       </div>
     </>
