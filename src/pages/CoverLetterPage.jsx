@@ -10,7 +10,7 @@ import {
 import { SlInfo } from "react-icons/sl";
 import { FaPlusSquare } from "react-icons/fa";
 
-function App() {
+function CoverLetterPage() {
   const canvas = useRef();
   const [value, setValue] = useState({
     file: [],
@@ -54,10 +54,10 @@ function App() {
   };
   return (
     <>
-      <div className="flex justify-around">
+      <div className="flex justify-around md:pt-28 pt-16">
         <div className="w-1/2">
           <div
-            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-700 ${
+            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
               value.personal ? "bg-orange-100" : "bg-orange-600"
             }`}
             onClick={() =>
@@ -72,12 +72,12 @@ function App() {
           >
             <div className="flex items-center">
               <RxPerson
-                className={`size-6 duration-700 text-orange-600 ${
+                className={`size-6 duration-300 text-orange-600 ${
                   !value.personal && " text-white"
                 }`}
               />
               <p
-                className={`text-lg ml-1 duration-700 font-bold text-orange-600 ${
+                className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
                   !value.personal && " text-white"
                 }`}
               >
@@ -85,12 +85,16 @@ function App() {
               </p>
             </div>
             <RxCaretDown
-              className={`size-10 duration-700 text-orange-600 ${
+              className={`size-10 duration-300 text-orange-600 ${
                 !value.personal && "rotate-180 text-white"
               }`}
             />
           </div>
-          <div className={`mx-3 mb-3 ${value.personal && "hidden"}`}>
+          <div
+            className={`mx-3 duration-300 relative ${
+              value.personal ? "max-h-0 z-[-1] opacity-0" : "max-h-full mb-3"
+            } `}
+          >
             <label htmlFor="name">
               Nama Lengkap
               <input
@@ -193,7 +197,7 @@ function App() {
             </div>
           </div>
           <div
-            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-700 ${
+            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
               value.workpos ? "bg-orange-100" : "bg-orange-600"
             }`}
             onClick={() =>
@@ -208,12 +212,12 @@ function App() {
           >
             <div className="flex items-center">
               <RxBackpack
-                className={`size-6 duration-700 text-orange-600 ${
+                className={`size-6 duration-300 text-orange-600 ${
                   !value.workpos && " text-white"
                 }`}
               />
               <p
-                className={`text-lg ml-1 duration-700 font-bold text-orange-600 ${
+                className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
                   !value.workpos && " text-white"
                 }`}
               >
@@ -221,12 +225,16 @@ function App() {
               </p>
             </div>
             <RxCaretDown
-              className={`size-10 duration-700 text-orange-600 ${
+              className={`size-10 duration-300 text-orange-600 ${
                 !value.workpos && "rotate-180 text-white"
               }`}
             />
           </div>
-          <div className={`mx-3 mb-3 ${value.workpos && "hidden"}`}>
+          <div
+            className={`mx-3 duration-300 relative ${
+              value.workpos ? "max-h-0 z-[-1] opacity-0" : "max-h-full mb-3"
+            } `}
+          >
             <label htmlFor="position">
               Posisi Pekerjaan
               <input
@@ -242,7 +250,7 @@ function App() {
             </label>
           </div>
           <div
-            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-700 ${
+            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
               value.attachment ? "bg-orange-100" : "bg-orange-600"
             }`}
             onClick={() =>
@@ -257,12 +265,12 @@ function App() {
           >
             <div className="flex items-center">
               <RxFileText
-                className={`size-6 duration-700 text-orange-600 ${
+                className={`size-6 duration-300 text-orange-600 ${
                   !value.attachment && " text-white"
                 }`}
               />
               <p
-                className={`text-lg ml-1 duration-700 font-bold text-orange-600 ${
+                className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
                   !value.attachment && " text-white"
                 }`}
               >
@@ -270,16 +278,18 @@ function App() {
               </p>
             </div>
             <RxCaretDown
-              className={`size-10 duration-700 text-orange-600 ${
+              className={`size-10 duration-300 text-orange-600 ${
                 !value.attachment && "rotate-180 text-white"
               }`}
             />
           </div>
           <form
             onSubmit={addFile}
-            className={`mx-3 mt-4 ${
-              value.file.length === 0 ? "mb-3" : "mb-1"
-            } ${value.attachment && "hidden"}`}
+            className={`mx-3 duration-300 relative ${
+              value.attachment
+                ? "max-h-0 z-[-1] opacity-0 mb-0"
+                : "max-h-full mb-3"
+            }`}
           >
             <p>Lampiran Berkas</p>
             <div className="flex items-center gap-2">
@@ -304,7 +314,7 @@ function App() {
             {value.file.map((file) => (
               <li
                 key={file.id}
-                className="flex justify-between items-center hover:font-bold transition duration-700"
+                className="flex justify-between items-center hover:font-bold transition duration-300"
               >
                 {file.id}. {file.name}
                 <RxCrossCircled
@@ -315,7 +325,7 @@ function App() {
             ))}
           </ul>
           <div
-            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-700 ${
+            className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
               value.infoletter ? "bg-orange-100" : "bg-orange-600"
             }`}
             onClick={() =>
@@ -330,12 +340,12 @@ function App() {
           >
             <div className="flex items-center">
               <SlInfo
-                className={`size-6 duration-700 text-orange-600 ${
+                className={`size-6 duration-300 text-orange-600 ${
                   !value.infoletter && " text-white"
                 }`}
               />
               <p
-                className={`text-lg ml-1 duration-700 font-bold text-orange-600 ${
+                className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
                   !value.infoletter && " text-white"
                 }`}
               >
@@ -343,12 +353,16 @@ function App() {
               </p>
             </div>
             <RxCaretDown
-              className={`size-10 duration-700 text-orange-600 ${
+              className={`size-10 duration-300 text-orange-600 ${
                 !value.infoletter && "rotate-180 text-white"
               }`}
             />
           </div>
-          <div className={`mx-3 mb-3 ${value.infoletter && "hidden"}`}>
+          <div
+            className={`mx-3 duration-300 relative ${
+              value.infoletter ? "max-h-0 z-[-1] opacity-0" : "max-h-full"
+            } `}
+          >
             <label htmlFor="company">
               Penerima Surat
               <input
@@ -468,4 +482,4 @@ function App() {
   );
 }
 
-export default App;
+export default CoverLetterPage;
