@@ -23,7 +23,11 @@ function Home() {
             </p>
           </button>
         </div>
-        <img src={worker} alt="worker" className="size-[600px] pb-10" />
+        <img
+          src={worker}
+          alt="worker"
+          className="md:size-[600px] size-[500px] md:pb-10"
+        />
       </div>
     </>
   );
