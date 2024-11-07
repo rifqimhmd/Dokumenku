@@ -1,4 +1,5 @@
 import { RxFilePlus } from "react-icons/rx";
+import worker from "/src/assets/icon/Worker.png";
 
 function Home() {
   return (
@@ -22,11 +23,7 @@ function Home() {
             </p>
           </button>
         </div>
-        <img
-          src="src/assets/icon/Worker.png"
-          alt="worker"
-          className="size-[600px] pb-10"
-        />
+        <img src={worker} alt="worker" className="size-[600px] pb-10" />
       </div>
     </>
   );
