@@ -5,9 +5,11 @@ import Product from "../Components/Product";
 function HomePage() {
   return (
     <>
-      <Navbar />
-      <Home />
-      <Product />
+      <div className="overflow-x-hidden">
+        <Navbar />
+        <Home />
+        <Product />
+      </div>
     </>
   );
 }
