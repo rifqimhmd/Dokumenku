@@ -24,17 +24,21 @@ function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 w-full bg-orange-600">
+      <header
+        className={`sticky top-0 w-full bg-orange-600 ${
+          scroll ? "shadow-md" : ""
+        }`}
+      >
         <nav
           className={`flex items-center justify-between text-white md:w-[90%] mx-auto p-2 duration-500 ${
-            scroll ? "md:p-3 shadow-md" : "md:p-4 shadow-none"
+            scroll ? "md:p-3" : "md:p-4"
           }`}
         >
           <a href="/">
             <img src={logo} alt="logo" className="md:w-[180px] w-[150px]" />
           </a>
           <ul
-            className={`md:static absolute sm:text-xl text-lg flex flex-col md:flex-row md:gap-20 md:top-auto md:left-auto left-0 top-[58px] md:top-auto bg-orange-600 w-full md:w-auto  h-[100dvh] md:h-auto md:duration-0 duration-500 ${
+            className={`md:overflow-x-visible overflow-x-hidden md:static absolute sm:text-xl text-lg flex flex-col md:flex-row md:gap-20 md:top-auto md:left-auto left-0 top-[58px] md:top-auto bg-orange-600 w-full md:w-auto  h-[100dvh] md:h-auto md:duration-0 duration-500 ${
               !navActive && "translate-x-full md:translate-x-0"
             }`}
           >
