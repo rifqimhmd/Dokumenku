@@ -424,13 +424,11 @@ function CoverLetter() {
             }`}
           >
             <RxEyeNone
-              className="md:hidden size-8 md:ml-2 bg-orange-600 text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105  duration-300 cursor-pointer"
+              className="md:hidden size-8 ml-10 bg-orange-600 text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105  duration-300 cursor-pointer"
               onClick={() => setViewActive(false)}
             />
             <div ref={canvas} className="text-justify text-[12px] font-tinos">
-              <div
-                className={`w-[27.8rem] ${!viewActive && "max-w-[27.8rem]"}`}
-              >
+              <div className={`w-[27.8rem] ${!viewActive ? "px-0" : "px-10"}`}>
                 <p className="text-right pb-2">{value.locdate}</p>
                 <p>Kepada Yth.</p>
                 <p>HRD {value.company}</p>
