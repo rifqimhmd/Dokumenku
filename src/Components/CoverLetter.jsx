@@ -419,12 +419,12 @@ function CoverLetter() {
             </div>
           </div>
           <div
-            className={`absolute top-1 md:scale-100 scale-[0.7] md:top-auto md:static md:p-16 md:border md:border-black md:duration-0 duration-500 ${
+            className={`absolute top-0 md:scale-100 scale-[0.7] md:top-auto md:static md:p-16 md:border md:border-black md:duration-0 duration-500 ${
               !viewActive && "-translate-x-[150%] md:translate-x-0"
             }`}
           >
             <RxEyeNone
-              className="md:hidden size-8 md:ml-2 bg-orange-600 text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105  duration-300 cursor-pointer"
+              className="md:hidden size-12 md:ml-2 bg-orange-600 text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105  duration-300 cursor-pointer"
               onClick={() => setViewActive(false)}
             />
             <div ref={canvas} className="text-justify text-[12px] font-tinos">
