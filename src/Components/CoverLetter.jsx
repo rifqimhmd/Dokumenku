@@ -428,7 +428,7 @@ function CoverLetter() {
               onClick={() => setViewActive(false)}
             />
             <div ref={canvas} className="text-justify text-[12px] font-tinos">
-              <div className="w-[27.8rem]">
+              <div className="w-[27.8rem] mx-auto">
                 <p className="text-right pb-2">{value.locdate}</p>
                 <p>Kepada Yth.</p>
                 <p>HRD {value.company}</p>
