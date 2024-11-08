@@ -8,7 +8,7 @@ function Home() {
         id="home"
         className="flex flex-col md:flex-row justify-center scroll-m-20"
       >
-        <div className=" md:pl-20 pl-3 md:pt-16 pt-3">
+        <div className=" md:pl-20 pl-3 md:pt-36 pt-[72px]">
           <h1 className="md:text-5xl text-3xl font-bold">
             Buat dokumen pekerjaanmu dengan lebih cepat dan praktis!
           </h1>
@@ -28,7 +28,7 @@ function Home() {
         <img
           src={worker}
           alt="worker"
-          className="md:size-[600px] size-[500px] md:pb-10"
+          className="md:size-[600px] size-[500px] md:mt-10"
         />
       </div>
     </>

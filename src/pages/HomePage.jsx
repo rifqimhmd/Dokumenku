@@ -1,6 +1,8 @@
 import Navbar from "../Components/Navbar";
 import Home from "../Components/Home";
 import Product from "../Components/Product";
+import About from "../Components/About";
+import Footer from "../Components/Footer";
 
 function HomePage() {
   return (
@@ -9,6 +11,8 @@ function HomePage() {
         <Navbar />
         <Home />
         <Product />
+        <About />
+        <Footer />
       </div>
     </>
   );
