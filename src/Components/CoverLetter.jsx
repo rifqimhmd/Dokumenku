@@ -419,7 +419,7 @@ function CoverLetter() {
             </div>
           </div>
           <div
-            className={`absolute md:static md:p-16 bg-white md:top-auto top-20 left-0 right-0 md:left-auto md:right-auto  pl-7 md:border md:border-black md:duration-0 duration-500 ${
+            className={`absolute top-20 md:top-auto md:static md:p-16 md:border md:border-black md:duration-0 duration-500 ${
               !viewActive && "-translate-x-[150%] md:translate-x-0"
             }`}
           >
