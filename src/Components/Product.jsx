@@ -5,7 +5,7 @@ function Product() {
     <>
       <div
         id="product"
-        className="md:scroll-m-[72px] scroll-m-12 bg-orange-100 md:py-16 py-10"
+        className="md:scroll-m-[40px] scroll-m-12 bg-orange-100 md:py-16 py-10"
       >
         <h1 className="text-center md:text-5xl text-3xl font-bold md:mb-10 mb-8">
           Produk dari DokumenKerjaku

@@ -61,7 +61,7 @@ function CoverLetter() {
   };
   return (
     <>
-      <div className=" md:pt-28 pt-[72px] pb-8">
+      <div className=" md:pt-28 pt-[72px] pb-28">
         <div
           className={`flex items-center md:text-3xl text-2xl font-bold md:pl-20 pl-2 mb-5 md:opacity-100 duration-300 ${
             viewActive ? "opacity-0" : "opacity-100"

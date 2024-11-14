@@ -6,7 +6,7 @@ function About() {
     <>
       <div
         id="tentangkami"
-        className="md:scroll-m-[72px] scroll-m-12 md:py-16 py-10"
+        className="md:scroll-m-[40px] scroll-m-12 md:pt-16 pt-10 pb-28"
       >
         <h1 className="text-center md:text-5xl text-3xl font-bold md:mb-10 mb-8">
           Tentang Kami

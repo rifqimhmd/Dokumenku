@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         tinos: ["Tinos", "serif"],
       },
+      colors: {
+        "red-custom": "#ef2f2f",
+      },
     },
   },
   plugins: [],

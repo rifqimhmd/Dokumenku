@@ -1,107 +1,150 @@
-import { RxMinus } from "react-icons/rx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { RxMinus, RxTriangleDown, RxTriangleUp } from "react-icons/rx";
+import {
+  FaHome,
+  FaUserAlt,
+  FaPhone,
+  FaQuestion,
+  FaTools,
+} from "react-icons/fa";
 import logo from "/src/assets/icon/DokumenKerjaku.png";
 
 function Navbar() {
-  const [navActive, setNavActive] = useState(false);
-  const [scroll, setScroll] = useState(false);
-
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+  const [active, setActive] = useState({
+    document: false,
+    menu: false,
+  });
   return (
     <>
-      <header
-        className={`z-10 fixed w-full bg-orange-600 ${
-          scroll ? "shadow-md" : ""
-        }`}
-      >
-        <nav
-          className={`flex items-center justify-between text-white md:w-[90%] mx-auto p-2 duration-500 ${
-            scroll ? "md:p-3" : "md:p-4"
-          }`}
-        >
-          <a href="/">
-            <img src={logo} alt="logo" className="md:w-[180px] w-[150px]" />
-          </a>
-          <ul
-            className={`z-10 md:overflow-x-visible overflow-x-hidden md:static absolute sm:text-xl text-lg flex flex-col md:flex-row md:gap-20 md:top-auto md:left-auto left-0 top-[59px] bg-orange-600 w-full md:w-auto  h-[100dvh] md:h-auto md:duration-0 duration-500 ${
-              !navActive && "translate-x-full md:translate-x-0"
-            }`}
-          >
-            <li className="md:p-0 p-2 md:border-none border-y border-orange-100 hover:bg-white md:hover:bg-transparent hover:text-orange-600 md:hover:text-white duration-300 cursor-pointer">
-              <a
-                href="#home"
-                className="md:hover:border-b-2 md:hover:border-white"
-                onClick={() => setNavActive(false)}
-              >
-                Beranda
-              </a>
-            </li>
-            <li className="md:p-0 p-2 md:border-none border-b border-orange-100 hover:bg-white md:hover:bg-transparent hover:text-orange-600 md:hover:text-white duration-300 cursor-pointer">
-              <a
-                href=""
-                className="md:hover:border-b-2 md:hover:border-white"
-                onClick={() => setNavActive(false)}
-              >
-                Donasi
-              </a>
-            </li>
-            <li className="md:p-0 p-2 md:border-none border-b border-orange-100 hover:bg-white md:hover:bg-transparent hover:text-orange-600 md:hover:text-white duration-300 cursor-pointer">
-              <a
-                href="#product"
-                className="md:hover:border-b-2 md:hover:border-white"
-                onClick={() => setNavActive(false)}
-              >
-                Produk
-              </a>
-            </li>
-            <li className="md:p-0 p-2 md:border-none border-b border-orange-100 hover:bg-white md:hover:bg-transparent hover:text-orange-600 md:hover:text-white duration-300 cursor-pointer">
-              <a
-                href="#tentangkami"
-                className="md:hover:border-b-2 md:hover:border-white"
-                onClick={() => setNavActive(false)}
-              >
-                Tentang Kami
-              </a>
-            </li>
-          </ul>
-          <div
-            className={`md:hidden mr-2 absolute right-0 size-9 cursor-pointer text-custom-pink hover:scale-105 duration-300`}
-            onClick={() => setNavActive(!navActive)}
-          >
-            <RxMinus
-              className={`size-9 absolute  duration-300 ${
-                navActive ? "rotate-45 top-[0%] scale-125" : "top-[-25%]"
+      <header className="w-full z-10 fixed bg-white shadow-[0_4px_4px_rgba(0,0,0,0.2)]">
+        <nav className="flex items-center justify-between px-6 py-2 relative">
+          <div className="flex items-center gap-8">
+            <a href="/">
+              <img src={logo} alt="logo" className="w-[170px]" />
+            </a>
+            <ul className="uppercase items-center font-semibold text-[13px] flex gap-8 ">
+              <li className="hidden md:flex">
+                <a href="" className="hover:text-red-custom cursor-pointer">
+                  CV ATS Friendly
+                </a>
+              </li>
+              <li className="hidden md:flex">
+                <a href="" className="hover:text-red-custom cursor-pointer">
+                  Surat Lamaran
+                </a>
+              </li>
+              <li>
+                <div
+                  className="md:flex hidden items-center hover:text-red-custom cursor-pointer"
+                  onClick={() =>
+                    setActive({
+                      ...active,
+                      document: !active.document,
+                      menu: false,
+                    })
+                  }
+                >
+                  <p className="mr-[1px]">Semua Dokumen</p>
+                  {active.document ? <RxTriangleUp /> : <RxTriangleDown />}
+                </div>
+                <div
+                  className={`md:flex-row z-10 flex flex-col absolute md:w-[370px] w-[200px] shadow-md top-[72px] right-0 md:right-auto bg-white md:rounded-md rounded-l-md p-5 gap-8 md:duration-0 duration-300 ${
+                    active.document
+                      ? "translate-x-0"
+                      : "md:hidden translate-x-[200%]"
+                  }`}
+                >
+                  <ul className="md:w-1/2">
+                    <li className="text-sm text-gray-500 ml-2 mb-2">
+                      <a className="border-b-2">Curriculum Vitae</a>
+                    </li>
+                    <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
+                      <a href="">CV ATS Friendly</a>
+                    </li>
+                    <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
+                      <a href="">CV Kreatif</a>
+                    </li>
+                  </ul>
+                  <ul className="md:w-1/2">
+                    <li className="text-sm text-gray-500 ml-2 mb-2">
+                      <a className="border-b-2">Dokumen Lain</a>
+                    </li>
+                    <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
+                      <a href="">Surat Lamaran</a>
+                    </li>
+                    <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
+                      <a href="">Surat Resign</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center">
+            <FaTools
+              className={`md:hidden  size-6 mr-10 cursor-pointer hover:text-red-custom duration-300 ${
+                active.document ? "text-red-custom" : ""
               }`}
+              onClick={() =>
+                setActive({
+                  ...active,
+                  document: !active.document,
+                  menu: false,
+                })
+              }
             />
-            <RxMinus
-              className={`size-9 absolute duration-300 ${
-                navActive ? "opacity-0 translate-x-[-20%]" : ""
+            <div
+              className={` mr-3 absolute right-0 size-9 cursor-pointer hover:text-red-custom`}
+              onClick={() =>
+                setActive({ ...active, menu: !active.menu, document: false })
+              }
+            >
+              <RxMinus
+                className={`size-9 absolute  duration-300 ${
+                  active.menu ? "rotate-45 top-[0%] scale-125" : "top-[-25%]"
+                }`}
+              />
+              <RxMinus
+                className={`size-9 absolute duration-300 ${
+                  active.menu ? "opacity-0 translate-x-[-20%]" : ""
+                }`}
+              />
+              <RxMinus
+                className={`size-9 absolute duration-300 ${
+                  active.menu
+                    ? "rotate-[-45deg] top-[-0%] scale-125"
+                    : "top-[25%]"
+                }`}
+              />
+            </div>
+            <ul
+              className={`bg-white flex flex-col absolute top-[72px] right-0 w-[200px] shadow-md p-5 rounded-l-md font-semibold text-sm uppercase duration-300 ${
+                active.menu ? "translate-x-0" : "translate-x-[200%]"
               }`}
-            />
-            <RxMinus
-              className={`size-9 absolute duration-300 ${
-                navActive ? "rotate-[-45deg] top-[-0%] scale-125" : "top-[25%]"
-              }`}
-            />
+            >
+              <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">
+                <FaHome className="size-3" />
+                <a href="">Beranda</a>
+              </li>
+
+              <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">
+                <FaPhone className="size-3" />
+                <a href="">Hubungi Kami</a>
+              </li>
+              <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">
+                <FaUserAlt className="size-3" />
+                <a href="">Tentang Kami</a>
+              </li>
+              <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">
+                <FaQuestion className="size-3" />
+                <a href="">Pertanyaan</a>
+              </li>
+            </ul>
           </div>
         </nav>
       </header>
     </>
   );
 }
+
 export default Navbar;
