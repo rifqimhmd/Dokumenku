@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <>
       <header className="w-full z-10 fixed bg-white shadow-[0_4px_4px_rgba(0,0,0,0.2)]">
-        <nav className="flex items-center justify-between px-6 py-2 relative">
+        <nav className="flex items-center justify-between px-5 py-2 relative">
           <div className="flex items-center gap-8">
             <a href="/">
               <img src={logo} alt="logo" className="w-[170px]" />
@@ -29,7 +29,10 @@ function Navbar() {
                 </a>
               </li>
               <li className="hidden md:flex">
-                <a href="" className="hover:text-red-custom cursor-pointer">
+                <a
+                  href="/surat-lamaran"
+                  className="hover:text-red-custom cursor-pointer"
+                >
                   Surat Lamaran
                 </a>
               </li>
@@ -70,7 +73,10 @@ function Navbar() {
                       <a className="border-b-2">Dokumen Lain</a>
                     </li>
                     <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
-                      <a href="">Surat Lamaran</a>
+                      <a href="/suratlamaran">Surat Lamaran</a>
+                    </li>
+                    <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
+                      <a href="">Surat Magang</a>
                     </li>
                     <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
                       <a href="">Surat Resign</a>
@@ -124,7 +130,7 @@ function Navbar() {
             >
               <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">
                 <FaHome className="size-3" />
-                <a href="">Beranda</a>
+                <a href="/">Beranda</a>
               </li>
 
               <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">

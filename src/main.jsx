@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     errorElement: <div>Error</div>,
   },
   {
-    path: "/surat-lamaran",
+    path: "/suratlamaran",
     element: <CoverLetterPage />,
     errorElement: <div>Error</div>,
   },

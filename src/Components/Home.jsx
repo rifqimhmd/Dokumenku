@@ -1,35 +1,42 @@
-import { RxFilePlus } from "react-icons/rx";
-import worker from "/src/assets/icon/Worker.png";
+import { Data } from "../Data/Data.jsx";
 
 function Home() {
   return (
     <>
-      <div
-        id="home"
-        className="flex flex-col md:flex-row justify-center scroll-m-20"
-      >
-        <div className=" md:pl-20 pl-3 md:pt-36 pt-[72px]">
-          <h1 className="md:text-5xl text-3xl font-bold">
-            Buat dokumen pekerjaanmu dengan lebih cepat dan praktis!
+      <div className="pt-20 bg-gray-100">
+        <section className="mb-10">
+          <h1 className="text-center md:text-[40px] text-[27px] font-bold px-2">
+            Semua dokumen yang dibutuhkan ada di satu tempat
           </h1>
-          <p className="md:text-xl text-base pt-5 md:pt-10">
-            Permudah pekerjaanmu dengan DokumenKerjaku. Buat CV dan dokumen lain
-            hanya dengan sekali klik!
+          <p className="text-center md:text-[20px] text-[16px] md:w-[72%] mx-auto w-[95%] px-5">
+            Semua dokumen yang dibutuhkan untuk pekerjaan dan administrasi
+            tersedia di sini 100% GRATIS. Anda dapat membuat dokumen penting
+            seperti CV, Surat Lamaran, Surat Izin Cuti, dan lainnya.
           </p>
-          <button className=" bg-orange-600 md:mt-5 mt-4 md:py-2 py-1 md:px-5 px-4 rounded-full text-white hover:bg-opacity-95">
-            <a href="#product" className="flex items-center">
-              <RxFilePlus className=" size-8" />
-              <p className="md:text-xl text-base font-bold">
-                Buat Dokumen Sekarang
+        </section>
+        <section className="gap-1 grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 px-5 md:px-9 pb-12">
+          {Data.map((item) => (
+            <a
+              href={item.link}
+              key={item.id}
+              className="sm:aspect-[1/1] md:p-8 p-3 box-border rounded-md bg-white shadow-md hover:bg-slate-50 group relative"
+            >
+              <section className="flex sm:flex-col flex-row sm:items-start items-center gap-2 sm:gap-4 md:text-[20px] text-[16px] font-bold">
+                <img
+                  src={item.image}
+                  className="rounded-md md:size-10 size-8 group-hover:scale-110"
+                />
+                <h1>{item.title}</h1>
+              </section>
+              <p className="mt-3 md:text-[14px] text-[12px] text-gray-500 group-hover:text-gray-600">
+                {item.desc}
+              </p>
+              <p className="absolute md:text-[12px] text-[10px] font-bold text-red-custom md:top-3 top-2 right-2 md:right-3 px-3 py-1 border border-red-custom rounded-md">
+                {item.status}
               </p>
             </a>
-          </button>
-        </div>
-        <img
-          src={worker}
-          alt="worker"
-          className="md:size-[600px] size-[500px] md:mt-10"
-        />
+          ))}
+        </section>
       </div>
     </>
   );
