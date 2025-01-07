@@ -30,7 +30,7 @@ function Navbar() {
               </li>
               <li className="hidden md:flex">
                 <a
-                  href="/surat-lamaran"
+                  href="/suratlamaran"
                   className="hover:text-red-custom cursor-pointer"
                 >
                   Surat Lamaran
@@ -139,7 +139,7 @@ function Navbar() {
               </li>
               <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">
                 <FaUserAlt className="size-3" />
-                <a href="">Tentang Kami</a>
+                <a href="/about">Tentang Kami</a>
               </li>
               <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer flex items-center gap-1">
                 <FaQuestion className="size-3" />

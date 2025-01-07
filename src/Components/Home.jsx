@@ -3,8 +3,8 @@ import { Data } from "../Data/Data.jsx";
 function Home() {
   return (
     <>
-      <div className="pt-20 bg-gray-100">
-        <section className="mb-10">
+      <div className="pt-20 bg-gray-100 min-h-[100vh]">
+        <section className="mb-8">
           <h1 className="text-center md:text-[40px] text-[27px] font-bold px-2">
             Semua dokumen yang dibutuhkan ada di satu tempat
           </h1>
@@ -14,7 +14,7 @@ function Home() {
             seperti CV, Surat Lamaran, Surat Izin Cuti, dan lainnya.
           </p>
         </section>
-        <section className="gap-1 grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 px-5 md:px-9 pb-12">
+        <section className="gap-1 grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 px-6 md:px-9 pb-10">
           {Data.map((item) => (
             <a
               href={item.link}

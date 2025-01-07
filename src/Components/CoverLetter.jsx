@@ -61,7 +61,7 @@ function CoverLetter() {
   };
   return (
     <>
-      <div className=" md:pt-28 pt-[72px] pb-28">
+      <div className="pt-20 pb-28">
         <div
           className={`flex items-center md:text-3xl text-2xl font-bold md:pl-20 pl-2 mb-5 md:opacity-100 duration-300 ${
             viewActive ? "opacity-0" : "opacity-100"
@@ -70,7 +70,7 @@ function CoverLetter() {
           <TbFile className="md:size-10 size-8" />
           <h1>Surat Lamaran</h1>
           <RxEyeOpen
-            className="md:hidden mx-2 size-8 bg-orange-600 text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105 duration-300 cursor-pointer"
+            className="md:hidden mx-2 size-8 bg-red-custom text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105 duration-300 cursor-pointer"
             onClick={() => setViewActive(!viewActive)}
           />
           <RxArrowDown
@@ -85,8 +85,8 @@ function CoverLetter() {
             }`}
           >
             <div
-              className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
-                value.personal ? "bg-orange-100" : "bg-orange-600"
+              className={`flex items-center justify-between border rounded-md py-1 px-2 border-red-custom cursor-pointer mb-4 duration-300 ${
+                value.personal ? "bg-red-100" : "bg-red-custom"
               }`}
               onClick={() =>
                 setValue({
@@ -100,12 +100,12 @@ function CoverLetter() {
             >
               <div className="flex items-center">
                 <RxPerson
-                  className={`size-6 duration-300 text-orange-600 ${
+                  className={`size-6 duration-300 text-red-custom ${
                     !value.personal && " text-white"
                   }`}
                 />
                 <p
-                  className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
+                  className={`text-lg ml-1 duration-300 font-bold text-red-custom ${
                     !value.personal && " text-white"
                   }`}
                 >
@@ -113,7 +113,7 @@ function CoverLetter() {
                 </p>
               </div>
               <RxCaretDown
-                className={`size-10 duration-300 text-orange-600 ${
+                className={`size-10 duration-300 text-red-custom ${
                   !value.personal && "rotate-180 text-white"
                 }`}
               />
@@ -132,7 +132,7 @@ function CoverLetter() {
                   required
                   maxLength={55}
                   placeholder="Ex: Rifqi Muhammad"
-                  className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </label>
               <div className="flex gap-5">
@@ -147,7 +147,7 @@ function CoverLetter() {
                     required
                     maxLength={55}
                     placeholder="Ex: Jakarta, 10 Agustus 2024"
-                    className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                    className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                   />
                 </label>
                 <label htmlFor="gender" className="w-1/2">
@@ -157,7 +157,7 @@ function CoverLetter() {
                     onChange={(e) =>
                       setValue({ ...value, gender: e.target.value })
                     }
-                    className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                    className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                   >
                     <option value="">Pilih Jenis Kelamin</option>
                     <option value="Laki-laki">Laki-laki</option>
@@ -176,7 +176,7 @@ function CoverLetter() {
                   required
                   maxLength={55}
                   placeholder="Ex: S1 - Teknik Informatika"
-                  className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </label>
               <label htmlFor="address">
@@ -190,7 +190,7 @@ function CoverLetter() {
                   required
                   maxLength={55}
                   placeholder="Ex: Jl. Pencari Kerja, Depok"
-                  className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </label>
               <div className="flex gap-5">
@@ -205,7 +205,7 @@ function CoverLetter() {
                     required
                     maxLength={15}
                     placeholder="Ex: 08xxxxxxx"
-                    className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                    className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                   />
                 </label>
                 <label htmlFor="email" className="w-1/2">
@@ -219,14 +219,14 @@ function CoverLetter() {
                     required
                     maxLength={55}
                     placeholder="Ex: rifqimuh390@gmail.com"
-                    className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                    className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                   />
                 </label>
               </div>
             </div>
             <div
-              className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
-                value.workpos ? "bg-orange-100" : "bg-orange-600"
+              className={`flex items-center justify-between border rounded-md py-1 px-2 border-red-custom cursor-pointer mb-4 duration-300 ${
+                value.workpos ? "bg-red-100" : "bg-red-custom"
               }`}
               onClick={() =>
                 setValue({
@@ -240,12 +240,12 @@ function CoverLetter() {
             >
               <div className="flex items-center">
                 <RxBackpack
-                  className={`size-6 duration-300 text-orange-600 ${
+                  className={`size-6 duration-300 text-red-custom ${
                     !value.workpos && " text-white"
                   }`}
                 />
                 <p
-                  className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
+                  className={`text-lg ml-1 duration-300 font-bold text-red-custom ${
                     !value.workpos && " text-white"
                   }`}
                 >
@@ -253,7 +253,7 @@ function CoverLetter() {
                 </p>
               </div>
               <RxCaretDown
-                className={`size-10 duration-300 text-orange-600 ${
+                className={`size-10 duration-300 text-red-custom ${
                   !value.workpos && "rotate-180 text-white"
                 }`}
               />
@@ -273,13 +273,13 @@ function CoverLetter() {
                   }
                   required
                   placeholder="Ex: IT Staff"
-                  className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </label>
             </div>
             <div
-              className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
-                value.attachment ? "bg-orange-100" : "bg-orange-600"
+              className={`flex items-center justify-between border rounded-md py-1 px-2 border-red-custom cursor-pointer mb-4 duration-300 ${
+                value.attachment ? "bg-red-100" : "bg-red-custom"
               }`}
               onClick={() =>
                 setValue({
@@ -293,12 +293,12 @@ function CoverLetter() {
             >
               <div className="flex items-center">
                 <RxFileText
-                  className={`size-6 duration-300 text-orange-600 ${
+                  className={`size-6 duration-300 text-red-custom ${
                     !value.attachment && " text-white"
                   }`}
                 />
                 <p
-                  className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
+                  className={`text-lg ml-1 duration-300 font-bold text-red-custom ${
                     !value.attachment && " text-white"
                   }`}
                 >
@@ -306,7 +306,7 @@ function CoverLetter() {
                 </p>
               </div>
               <RxCaretDown
-                className={`size-10 duration-300 text-orange-600 ${
+                className={`size-10 duration-300 text-red-custom ${
                   !value.attachment && "rotate-180 text-white"
                 }`}
               />
@@ -326,16 +326,16 @@ function CoverLetter() {
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Ex: CV"
-                  className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
                 <FaPlusSquare
-                  className="text-orange-500 cursor-pointer size-[46px] hover:text-orange-600"
+                  className="text-red-500 cursor-pointer size-[46px] hover:text-red-custom"
                   onClick={addFile}
                 />
               </div>
             </form>
             <ul
-              className={`mx-3 p-2 border border-orange-600 rounded-md mb-5 ${
+              className={`mx-3 p-2 border border-red-custom rounded-md mb-5 ${
                 value.file.length === 0 && "hidden"
               } ${value.attachment && "hidden"}`}
             >
@@ -346,15 +346,15 @@ function CoverLetter() {
                 >
                   {file.id}. {file.name}
                   <RxCrossCircled
-                    className="text-orange-500 cursor-pointer size-5 hover:text-orange-600"
+                    className="text-red-500 cursor-pointer size-5 hover:text-red-custom"
                     onClick={() => deleteFile(file.id)}
                   />
                 </li>
               ))}
             </ul>
             <div
-              className={`flex items-center justify-between border rounded-md py-1 px-2 border-orange-600 cursor-pointer mb-4 duration-300 ${
-                value.infoletter ? "bg-orange-100" : "bg-orange-600"
+              className={`flex items-center justify-between border rounded-md py-1 px-2 border-red-custom cursor-pointer mb-4 duration-300 ${
+                value.infoletter ? "bg-red-100" : "bg-red-custom"
               }`}
               onClick={() =>
                 setValue({
@@ -368,12 +368,12 @@ function CoverLetter() {
             >
               <div className="flex items-center">
                 <SlInfo
-                  className={`size-6 duration-300 text-orange-600 ${
+                  className={`size-6 duration-300 text-red-custom ${
                     !value.infoletter && " text-white"
                   }`}
                 />
                 <p
-                  className={`text-lg ml-1 duration-300 font-bold text-orange-600 ${
+                  className={`text-lg ml-1 duration-300 font-bold text-red-custom ${
                     !value.infoletter && " text-white"
                   }`}
                 >
@@ -381,7 +381,7 @@ function CoverLetter() {
                 </p>
               </div>
               <RxCaretDown
-                className={`size-10 duration-300 text-orange-600 ${
+                className={`size-10 duration-300 text-red-custom ${
                   !value.infoletter && "rotate-180 text-white"
                 }`}
               />
@@ -401,7 +401,7 @@ function CoverLetter() {
                   }
                   required
                   placeholder="Ex: PT. DokumenKerjaku"
-                  className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </label>
               <label htmlFor="locdate">
@@ -413,7 +413,7 @@ function CoverLetter() {
                   }
                   required
                   placeholder="Ex: Jakarta, 10 Agustus 2024"
-                  className="w-full bg-orange-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-orange-200"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </label>
             </div>
@@ -424,7 +424,7 @@ function CoverLetter() {
             }`}
           >
             <RxEyeNone
-              className="md:hidden size-8 bg-orange-600 text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105  duration-300 cursor-pointer"
+              className="md:hidden size-8 bg-red-custom text-base p-1 rounded-full text-white hover:bg-opacity-90 hover:scale-105  duration-300 cursor-pointer"
               onClick={() => setViewActive(false)}
             />
             <div ref={canvas} className="text-justify text-[12px] font-tinos">
