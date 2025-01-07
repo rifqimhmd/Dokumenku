@@ -3,7 +3,7 @@ import { Data } from "../Data/Data.jsx";
 function Home() {
   return (
     <>
-      <div className="pt-20 bg-gray-100 min-h-[100vh]">
+      <div className="pt-20 pb-10 bg-gray-100 min-h-[100vh]">
         <section className="mb-8">
           <h1 className="text-center md:text-[40px] text-[27px] font-bold px-2">
             Semua dokumen yang dibutuhkan ada di satu tempat
