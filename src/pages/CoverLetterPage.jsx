@@ -5,9 +5,11 @@ import Footer from "../Components/Footer";
 function HomePage() {
   return (
     <>
-      <div className="overflow-x-hidden  min-h-screen">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        <CoverLetter />
+        <main className="flex-grow">
+          <CoverLetter />
+        </main>
         <Footer />
       </div>
     </>
