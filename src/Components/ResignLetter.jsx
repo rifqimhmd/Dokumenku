@@ -254,6 +254,16 @@ function ResignLetter() {
                   className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
                 />
               </label>
+              <label htmlFor="date">
+                Tanggal Pengunduran Diri
+                <input
+                  type="text"
+                  onChange={(e) => setValue({ ...value, date: e.target.value })}
+                  required
+                  placeholder="Ex: 31 Agustus 2025"
+                  className="w-full bg-red-100 p-2 my-2 rounded-md focus:outline-none focus:ring-4 focus:ring-red-200"
+                />
+              </label>
             </div>
           </div>
           <div
