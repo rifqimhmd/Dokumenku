@@ -27,7 +27,7 @@ export const Data = [
     desc: "Anda bisa membuat surat lamaran dengan mudah dan cepat, membuat proses melamar lebih efisien.",
     image: suratlamaran,
     link: "/suratlamaran",
-    status: "Baru!",
+    status: "Tersedia",
   },
   {
     id: 4,
@@ -43,6 +43,6 @@ export const Data = [
     desc: "Surat resign singkat dan jelas akan menunjukkan sikap profesional dan menghormati waktu penerima.",
     image: suratresign,
     link: "/suratresign",
-    status: "Belum tersedia",
+    status: "Baru",
   },
 ];

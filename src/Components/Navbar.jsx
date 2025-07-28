@@ -79,7 +79,7 @@ function Navbar() {
                       <a href="">Surat Magang</a>
                     </li>
                     <li className="p-2 hover:text-red-custom hover:bg-slate-100 hover:rounded-md cursor-pointer">
-                      <a href="">Surat Resign</a>
+                      <a href="/suratresign">Surat Resign</a>
                     </li>
                   </ul>
                 </div>

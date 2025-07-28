@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import CoverLetterPage from "./pages/CoverLetterPage";
+import ResignLetterPage from "./pages/ResignLetterPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
   {
     path: "/suratlamaran",
     element: <CoverLetterPage />,
+    errorElement: <div>Error</div>,
+  },
+  {
+    path: "/suratresign",
+    element: <ResignLetterPage />,
     errorElement: <div>Error</div>,
   },
 ]);
